@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Game</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+	<script defer src="js/app.js"></script>
+</head>
+<body>
+	<header>
+		<h1>Nim Type Zero</h1>
+	</header>
+
+	<main>
+
+
+
+		<div class="scoreBoard">
+			<div id="currentRound">Round:1</div>
+			<div class="status">	
+			<div id='p1Score'>
+				<div id="p1Name">Q</div>
+				<div id='p1won'>Win:</div>
+				<div id='p1lost'>Lost:</div>
+			</div>
+			<div id='p2Score'>
+				<div id="p2Name">Cassel</div>
+				<div id='p2won'>Win:</div>
+				<div id='p2lost'>Lost:</div>
+			</div>
+			<div id='p3Score'>
+				<div id="p3Name">Damon</div>
+				<div id='p3won'>Win:</div>
+				<div id='p3lost'>Lost:</div>
+			</div>
+			<div id='p4Score'>
+				<div id="p4Name">Mikkelsen</div>
+				<div id='p4won'>Win:</div>
+				<div id='p4lost'>Lost:</div>
+			</div>
+
+			</div>
+
+		</div>
+		<button id="showRule">Rule</button>
+	</main>
+
+	
+
+	<div class="tempRuleModal">
+			<div class="tempRuleContent">
+				<div class="tempRule">
+					Rule:<br>
+					1. The game is played with a deck of 40 cards, labeled with number 0, 1, 2, 3.<br>
+					2. The deck is shuffled using Gilbreath Shuffle <br>
+					3. 4 cards are dealt to each player.<br>
+					4. The game starts with each player having four cards in their hand not revealed to their opponents.<br>
+					5. The players play 8 rounds, and the starting player changes every turn<br>
+					6. At a player's turn, one must play a card from their hand by declaring its number and placing it down on the table.<br>
+					7. The card's value is added to the total value.<br>
+					8. If the player adds the card that makes the total value exceeding 9, the player loses the round.<br>
+				</div>
+				<div class="closeBtn">
+					<button class="next" id="ruleClose">Close</button>
+				</div>
+			</div>
+		</div>
+
+	<div class="introModal">
+		<div class='intro'>
+
+			<div id='title'>Nim Type Zero </div>
+			<button class="next" id='page1'>>></button>
+
+		</div>
+
+		<button class='next' id='skip'>skip</button>
+		
+	</div>
+
+	<div class="storyModal">
+		
+		<div class="story">
+			<div id="mission">
+				Mission:<br>
+				Agent Q! <br>
+				Your mission is to participate<br>
+				in the underground gambling competition.<br>
+				Play "Nim Type Zero" to<br>
+				stop the mafia families<br>
+				and win the prize money.<br>
+			</div>
+			<div class="p1Btn">
+				<button class="next" id="backTo1"><<</button>
+				<button class="next" id='page2'>>></button>
+			</div>
+		</div>
+		
+	</div>
+
+	<div class="ruleModal">
+		<div class="ruleContent">
+			<div class="rule">
+				Rule:<br>
+				1. The game is played with a deck of 40 cards, labeled with number 0, 1, 2, 3.<br>
+				2. The deck is shuffled using Gilbreath Shuffle <br>
+				3. 4 cards are dealt to each player.<br>
+				4. The game starts with each player having four cards in their hand not revealed to their opponents.<br>
+				5. The players play 8 rounds, and the starting player changes every turn<br>
+				6. At a player's turn, one must play a card from their hand by declaring its number and placing it down on the table.<br>
+				7. The card's value is added to the total value.<br>
+				8. If the player adds the card that makes the total value exceeding 9, the player loses the round.<br>
+			</div>
+			<div class="p2Btn">
+				<button class="next" id="backTo2"><<</button>
+				<button class="next" id='page3'>>></button>
+			</div>
+		</div>
+	</div>
+
+	<div class="startModal">
+		<div class="askStart">
+			<p>Would you like to join the table?</p>
+			<button class="next" id='page4'><<</button>
+			<button id='start'>Start</button>
+			</div>
+	</div>
+
+	
+		<div class='turnModal'>
+			<div class='cardBack'>
+			<p>Please select one card</p>
+			</div>
+		</div>
+
+		<div class="cardTable">
+
+			<div id="table">
+					<div class="profile">
+						<img class='mugshot' id='player1' src='css/img/player/player1.jpg'>
+						<img class='mugshot' id='player2' src='css/img/player/player2.jpg'>
+						<img class='mugshot' id='player3' src='css/img/player/player3.jpg'>
+						<img class='mugshot' id='player4' src='css/img/player/player4.jpg'>
+					</div>
+
+					<div class='hand'>
+						<div class='p1' id="p1Card"></div>
+						<div class='p2' id="p2Card"></div>
+						<div class='p3' id="p3Card"></div>
+						<div class='p4' id="p4Card"></div>
+					</div>
+
+					<div class='total'></div>
+					<div id="dont"> </div>
+
+					
+
+					
+			</div>
+
+			<div>
+				<div class='nameTag' id="tag1">Q</div>
+				<div class='nameTag' id="tag2">Cassel</div>
+				<div class='nameTag' id="tag3">Damon</div>
+				<div class='nameTag' id="tag4">Mikkelsen</div>
+			</div>
+
+		</div>
+
+
+		<div class="convinceModal">
+			<div class="convince">
+				<div id="challenge1">
+					Damon: What do you want?
+				</div>
+				<input id='helpMe'>
+				<button id='helpSubmit'>Speak</button>
+				<div id='showCards'></div>
+				
+			</div>
+		</div>
+
+
+
+		<div class='regameModal'>
+			<div class='regame'>
+				<div class='whoOne'></div>
+				<button class="continueBtn">Continue</button>
+			</div>
+		</div>
+
+
+
+
+		<div class='gameOverModal'>
+			<div class="gameOver">
+				<div id="result"></div>
+				<button id='retry'>Re-try</button>
+			</div>
+		</div>
+		
+	
+
+
+		
+
+
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
